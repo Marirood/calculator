@@ -1,0 +1,12 @@
+{
+  "name": "parvane-calc",
+  "version": "1.0.0",
+  "description": "Calculator application with SCSS support",
+  "scripts": {
+    "build": "sass scss/main.scss styles/main.css",
+    "watch": "sass scss/main.scss styles/main.css --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.80.3"
+  }
+}

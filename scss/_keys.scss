@@ -1,0 +1,174 @@
+[data-theme="dark"] {
+    --key-bg: #2b2b2b;
+    --key-bg-functional: #3a3a3a;
+    --key-hover: #555555;
+    --key-active: #444444;
+    --text-color: #ffffff;
+    --calculator-bg: #1e1e1e;
+    --keys-bg-outline: url(../img/backspace-outline-dark.svg);
+    --keys-bg-division: url(../img/division-dark.svg);
+    --keys-bg-square: url(../img/square\ root-dark.svg);
+    --keys-bg-change: url(../img/change-dark.svg);
+    --keys-bg-multiplication: url(../img/multiplication-dark.svg);
+    --keys-bg-x2: url(../img/x2-dark.svg);
+    --keys-bg-minus: url(../img/minus-dark.svg);
+    --keys-bg-x3: url(../img/x3-dark.svg);
+    --keys-bg-plus: url(../img/plus-dark.svg);
+    --keys-bg-x1: url(../img/x1-dark.svg);
+    --keys-bg-equals: url(../img/equals-dark.svg);
+    --keys-radius-small: 20px 20px 2px 2px;
+    --keys-shadow: 4px 4px 4px 4px rgb(20, 20, 20);
+}
+
+[data-theme="green"] {
+    --key-bg: #a5d046;
+    --key-bg-functional: #7bbc3f;
+    --key-hover: #4f9541;
+    --key-active: #2a6f1d;
+    --text-color: #000000;
+    --calculator-bg: #c8d776;
+    --keys-radius-small: 40px;
+}
+
+[data-theme="blue"] {
+    --key-bg: #7cc6e1;
+    --key-bg-functional: #4fb7e1;
+    --key-hover: #016ab7;
+    --key-active: #02487a;
+    --text-color: #000000;
+    --calculator-bg: #b7d9e7;
+    --keys-radius-small: 24px 2px;
+}
+
+.keys {
+    height: 100%;
+    min-height: 300px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2px;
+    text-align: center;
+    grid-area: keys;
+    cursor: pointer;
+    padding: 0 4px 4px;
+    transition: background-color 0.4s;
+
+    div {
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    @media screen and (max-width:1024px), (max-height:620px) {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+
+        #x3 {
+            display: none;
+        }
+
+        #percentage { order: 1; }
+        #square-root { order: 2; }
+        #x2 { order: 3; }
+        #x1 { order: 4; }
+        #ce { order: 5; }
+        #c { order: 6; }
+        #backspace-outline { order: 7; }
+        #division { order: 8; }
+        #seven { order: 9; }
+        #eight { order: 10; }
+        #nine { order: 11; }
+        #multiplication { order: 12; }
+        #four { order: 13; }
+        #five { order: 14; }
+        #six { order: 15; }
+        #minus { order: 16; }
+        #one { order: 17; }
+        #two { order: 18; }
+        #three { order: 19; }
+        #plus { order: 20; }
+        #change-sign { order: 21; }
+        #zero { order: 22; }
+        #dot { order: 23; }
+        #equals { order: 24; }
+    }
+}
+
+.number {
+    background-color: var(--key-bg);
+    font-size: 26px;
+    font-weight: bold;
+    border-radius: var(--keys-radius-small);
+    align-content: center;
+    transition: background-color 0.4s;
+    box-shadow: var(--keys-shadow);
+
+    &:hover {
+        background-color: var(--key-hover);
+    }
+
+    &:active {
+        background-color: var(--key-active);
+    }
+}
+
+.functional-key {
+    background-color: var(--key-bg-functional);
+    font-size: 20px;
+    border-radius: var(--keys-radius-small);
+    align-content: center;
+    transition: background-color 0.4s;
+    box-shadow: var(--keys-shadow);
+
+    &:hover {
+        background-color: var(--key-hover);
+    }
+
+    &:active {
+        background-color: var(--key-active);
+    }
+}
+
+#backspace-outline {
+    background-image: var(--keys-bg-outline);
+}
+
+#division {
+    background-image: var(--keys-bg-division);
+}
+
+#square-root {
+    background-image: var(--keys-bg-square);
+}
+
+#change-sign {
+    background-image: var(--keys-bg-change);
+}
+
+#multiplication {
+    background-image: var(--keys-bg-multiplication);
+}
+
+#x2 {
+    background-image: var(--keys-bg-x2);
+}
+
+#minus {
+    background-image: var(--keys-bg-minus);
+}
+
+#x3 {
+    background-image: var(--keys-bg-x3);
+}
+
+#plus {
+    background-image: var(--keys-bg-plus);
+}
+
+#x1 {
+    background-image: var(--keys-bg-x1);
+}
+
+#equals {
+    background-image: var(--keys-bg-equals);
+}

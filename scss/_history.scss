@@ -1,0 +1,108 @@
+[data-theme="dark"] {
+    --history-bg-hover: #3b3b3b;
+    --history-bg-active: #444444;
+    --history-button-line: #d82b79;
+    --history-radius-small: 20px 20px 2px 2px;
+    --history-button-hover: #d82b79;
+    --history-button-active: #9e1e58;
+    --history-trash-image: url(../img/delete-outline-dark.svg);
+}
+
+[data-theme="green"] {
+    --history-bg-hover: #4f9541;
+    --history-bg-active: #2a6f1d;
+    --history-button-line: #3c7132;
+    --history-button-hover: #225817;
+    --history-radius-small: 40px;
+}
+
+[data-theme="blue"] {
+    --history-bg-hover: #016ab7;
+    --history-bg-active: #02487a;
+    --history-button-line: #034a81;
+    --history-button-hover: #046ab8;
+    --history-radius-small: 24px 2px;
+}
+
+.history {
+    grid-area: history;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 320px;
+
+    @media (max-width: 640px) {
+        display: none;
+    }
+}
+
+.history-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 0;
+}
+
+.history-button {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 20px 8px 0;
+    cursor: pointer;
+    transition: color 0.4s;
+
+    &:hover {
+        color: var(--history-button-hover);
+    }
+
+    &:active {
+        color: var(--history-button-active);
+        text-decoration: underline var(--history-button-line) 2px;
+        text-underline-offset: 6px;
+    }
+}
+
+.history-text {
+    width: 1fr;
+    padding: 20px 20px;
+    margin-top: 16px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.4s;
+    border-radius: var(--history-radius-small);
+
+    &:hover {
+        background-color: var(--history-bg-hover);
+        border-radius: var(--history-radius-small);
+    }
+
+    &:active {
+        background-color: var(--history-bg-active);
+        border-radius: var(--history-radius-small);
+    }
+}
+
+.trash-bin {
+    width: 48px;
+    height: 48px;
+    background-image: var(--history-trash-image);
+    background-repeat: no-repeat;
+    padding: 20px 20px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    align-self: flex-end;
+
+    &:hover {
+        background-color: var(--history-bg-hover);
+        border-radius: var(--history-radius-small);
+    }
+
+    &:active {
+        background-color: var(--history-bg-active);
+        border-radius: var(--history-radius-small);
+    }
+
+    &:last-child {
+        margin-top: auto;
+    }
+}

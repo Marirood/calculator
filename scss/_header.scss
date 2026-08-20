@@ -1,0 +1,89 @@
+[data-theme="dark"] {
+    --header-bg-color: #3b3b3b;
+    --header-bg-active: #4d4d4d;
+    --header-radius-small: 2px 2px 12px 12px;
+    --header-max-image: url(../img/checkbox-blank-outline-dark.svg);
+    --header-min-image: url(../img/minus-dark.svg);
+    --header-close-image: url(../img/multiplication-dark.svg);
+}
+
+[data-theme="green"] {
+    --header-bg-hover: #4f9541;
+    --header-bg-active: #3c7132;
+    --header-radius-small: 20px;
+}
+
+[data-theme="blue"] {
+    --header-bg-hover: #046ab8;
+    --header-bg-active: #034a81;
+    --header-radius-small: 24px 2px;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 12px;
+    margin-right: 4px;
+
+    .left-section {
+        font-size: 16px;
+    }
+
+    .right-section-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .right-section {
+            width: 48px;
+            height: 48px;
+            background-position: center;
+        }
+    }
+
+    #minimize,
+    #maximize,
+    #close {
+        border-radius: var(--header-radius-small);
+        background-repeat: no-repeat;
+        transition: background-color 0.4s;
+    }
+
+    #minimize {
+        background-image: var(--header-min-image);
+
+        &:hover {
+            background-color: var(--header-bg-hover);
+        }
+
+        &:active {
+            background-color: var(--header-bg-active);
+        }
+    }
+
+    #maximize {
+        background-image: var(--header-max-image);
+
+        &:hover {
+            background-color: var(--header-bg-hover);
+        }
+
+        &:active {
+            background-color: var(--header-bg-active);
+        }
+    }
+
+    #close {
+        background-image: var(--header-close-image);
+
+        &:hover {
+            background-color: yellow;
+        }
+
+        &:active {
+            background-color: rgb(188, 2, 2);
+        }
+    }
+}
